@@ -11,7 +11,7 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: -1;
+  z-index: 0;
   background: black;
 }
 
@@ -22,7 +22,15 @@ body {
   margin: 0 auto;
   padding: 20px;
   text-align: center;
-    background-color: #000;
+}
+
+.hero {
+  padding-bottom: 10px;
+}
+
+.content {
+  background-color: #000;
+  padding-top: 10px;
 }
 
 h1,
@@ -66,7 +74,6 @@ ul li {
 
 .contact-info {
   font-size: 0.9em;
-  color: #ccc;
   margin-bottom: 20px;
 }
 
@@ -84,7 +91,7 @@ ul li {
 }
 
 a {
-  color: red;
+  color: #0F0;
   text-decoration: none;
 }
 
