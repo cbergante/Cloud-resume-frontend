@@ -27,14 +27,34 @@ jobs:
         uses: azure/cli@v2
         with:
           inlineScript: |
+            az storage blob upload \
+              --account-name stcloudresumeforrest \
+              --container-name '$web' \
+              --name index.html \
+              --file index.html \
+              --overwrite true \
+              --auth-mode login
+
             az storage blob upload-batch \
               --account-name stcloudresumeforrest \
-              --destination '$web' \
-              --source . \
-              --pattern '*' \
+              --destination '$web/css' \
+              --source css \
               --overwrite \
-              --auth-mode login \
-              --exclude-pattern '.github/*;.git*;README.md'
+              --auth-mode login
+
+            az storage blob upload-batch \
+              --account-name stcloudresumeforrest \
+              --destination '$web/js' \
+              --source js \
+              --overwrite \
+              --auth-mode login
+
+            az storage blob upload-batch \
+              --account-name stcloudresumeforrest \
+              --destination '$web/images' \
+              --source images \
+              --overwrite \
+              --auth-mode login
 
       - name: Purge Cloudflare cache
         run: |
