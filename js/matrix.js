@@ -1,8 +1,16 @@
 var c = document.getElementById("matrixCanvas");
 var ctx = c.getContext("2d");
 
-c.height = window.innerHeight;
-c.width = window.innerWidth;
+function resizeCanvas() {
+  var pageHeight = document.documentElement.scrollHeight;
+  var pageWidth = window.innerWidth;
+  c.width = pageWidth;
+  c.height = pageHeight;
+  c.style.width = pageWidth + "px";
+  c.style.height = pageHeight + "px";
+}
+
+resizeCanvas();
 
 var matrix = "ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789@#$%^&*()*&^%";
 matrix = matrix.split("");
@@ -32,3 +40,6 @@ function draw() {
 }
 
 setInterval(draw, 35);
+
+window.addEventListener("load", resizeCanvas);
+window.addEventListener("resize", resizeCanvas);
