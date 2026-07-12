@@ -35,9 +35,20 @@ body {
 
 h1,
 h2 {
-  color: #fff;
+  color: #0F0;
   margin-bottom: 10px;
   font-family: "Courier New", Consolas, monospace;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+.view-count {
+  color: #0F0;
+  font-family: "Courier New", Consolas, monospace;
+  font-size: 1.5em;
+  margin-bottom: 20px;
 }
 
 .section {
@@ -99,4 +110,82 @@ a {
 
 a:hover {
   text-decoration: underline;
+}
+
+/* Comments section */
+.comment-form {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.comment-form input,
+.comment-form textarea {
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #111;
+  color: #fff;
+  border: 1px solid #333;
+  border-radius: 4px;
+  padding: 8px 10px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  margin-bottom: 10px;
+}
+
+.comment-form textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+.comment-form button {
+  background-color: #111;
+  color: #0F0;
+  border: 1px solid #0F0;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-family: "Courier New", Consolas, monospace;
+  cursor: pointer;
+}
+
+.comment-form button:hover {
+  background-color: #0F0;
+  color: #000;
+}
+
+/* Honeypot field — hidden from real visitors, bots often fill it anyway */
+.hp-field {
+  position: absolute;
+  left: -9999px;
+  top: -9999px;
+}
+
+#comment-status {
+  font-size: 0.85em;
+  color: #ccc;
+  margin-bottom: 15px;
+}
+
+.comment-list {
+  text-align: left;
+}
+
+.comment-item {
+  border-bottom: 1px solid #333;
+  padding: 10px 0;
+}
+
+.comment-item .comment-name {
+  font-weight: bold;
+  color: #0F0;
+}
+
+.comment-item .comment-date {
+  font-size: 0.8em;
+  color: #888;
+  margin-left: 8px;
+}
+
+.comment-item .comment-message {
+  margin-top: 4px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
 }

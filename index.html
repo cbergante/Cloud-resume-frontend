@@ -28,7 +28,7 @@
         <a href="https://www.linkedin.com/in/carlosbergante/" target="_blank">LinkedIn</a>
       </p>
 
-      <p>This page has been viewed <span id="counter">0</span> times</p>
+      <p class="view-count">This page has been viewed <span id="counter">0</span> times</p>
 
       <div class="section">
         <h2>Professional Summary</h2>
@@ -192,6 +192,24 @@
           ECPI University, Virginia Beach, VA &mdash; GPA: 3.8</p>
       </div>
 
+      <div class="section">
+        <h2>Comments</h2>
+
+        <form id="comment-form" class="comment-form">
+          <input type="text" id="comment-name" name="name" placeholder="Your name" maxlength="50" required>
+          <textarea id="comment-message" name="message" placeholder="Leave a comment..." maxlength="500" required></textarea>
+          <!-- Honeypot field: hidden from real visitors via CSS; bots that fill
+               every field will trip this, and the submission gets silently
+               dropped server-side. -->
+          <input type="text" id="comment-website" name="website" class="hp-field" tabindex="-1" autocomplete="off">
+          <button type="submit">Post Comment</button>
+        </form>
+
+        <p id="comment-status"></p>
+
+        <div id="comment-list" class="comment-list"></div>
+      </div>
+
     </div>
 
   </div>
@@ -199,6 +217,7 @@
   <!-- Matrix Animation Script -->
   <script src="js/matrix.js"></script>
   <script src="js/counter.js"></script>
+  <script src="js/comments.js"></script>
 
 </body>
 
